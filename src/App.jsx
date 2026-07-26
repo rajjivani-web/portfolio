@@ -23,7 +23,7 @@ const personalInfo = {
   linkedin: "https://linkedin.com/in/raj-jivani-dev",
   instagram: "https://www.instagram.com/mr_jivani_3/",
   // ⬇️ YAHAN APNI IMAGE KA PATH DAALEIN ⬇️
-  profileImage: "/src/assets/profile.jpg",
+ profileImage: "",
   about: "Results-driven Full-Stack Web Developer with 1+ year of experience and a proven track record of delivering 20+ live web solutions for commercial clients. Specialized in building dynamic admin panels, automated booking systems, and third-party API integrations (WhatsApp, Email, Payment Gateways). Successfully sold 4 high-value commercial projects and built 10+ white-label taxi solutions with custom UI/UX for different brands.",
   experience: [
     {
