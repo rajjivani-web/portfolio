@@ -5,7 +5,8 @@ import {
   FaDownload, FaExternalLinkAlt, FaCode, FaServer, FaDatabase, FaLayerGroup, 
   FaUsers, FaComment, FaClock, FaLightbulb, FaBullseye, FaAward, FaChevronRight, 
   FaBriefcase, FaHeart, FaBolt, FaPaperPlane, FaBars, FaTimes, FaArrowRight,
-  FaCrown, FaStar, FaRocket, FaBuilding, FaIndustry, FaWhatsapp
+  FaCrown, FaStar, FaRocket, FaBuilding, FaIndustry, FaWhatsapp,
+  FaBriefcase, FaUserTie
 } from 'react-icons/fa';
 
 // ✅ APNI PHOTO IMPORT KAREIN (YAHAN)
@@ -25,7 +26,7 @@ const personalInfo = {
   github: "https://github.com/rajjivani",
   linkedin: "https://linkedin.com/in/raj-jivani-dev",
   instagram: "https://www.instagram.com/mr_jivani_3/",
-  profileImage: profilePic, // ✅ PHOTO SET
+  profileImage: profilePic,
   about: "Results-driven Full-Stack Web Developer with 1+ year of experience and a proven track record of delivering 20+ live web solutions for commercial clients. Specialized in building dynamic admin panels, automated booking systems, and third-party API integrations (WhatsApp, Email, Payment Gateways). Successfully sold 4 high-value commercial projects and built 10+ white-label taxi solutions with custom UI/UX for different brands.",
   experience: [
     {
@@ -304,7 +305,8 @@ const Button = ({ children, variant = "primary", className = "", onClick, ...pro
   const variants = {
     primary: "bg-red-600 hover:bg-red-700 text-white shadow-lg hover:shadow-red-500/25",
     outline: "border-2 border-red-600 text-red-600 hover:bg-red-600 hover:text-white",
-    ghost: "text-gray-400 hover:text-white hover:bg-white/5"
+    ghost: "text-gray-400 hover:text-white hover:bg-white/5",
+    success: "bg-green-600 hover:bg-green-700 text-white shadow-lg hover:shadow-green-500/25",
   };
   return (
     <button className={`${base} ${variants[variant]} ${className}`} onClick={onClick} {...props}>
@@ -478,7 +480,7 @@ function App() {
         )}
       </nav>
 
-      {/* HERO SECTION */}
+      {/* HERO SECTION - UPDATED FOR CLIENTS + RECRUITERS */}
       <div ref={homeRef}>
         <Section id="home" className="pt-32 md:pt-40 min-h-screen flex items-center">
           <div className="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
@@ -488,9 +490,9 @@ function App() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.2 }}
-                  className="inline-block px-4 py-2 bg-red-600/10 border border-red-600/30 rounded-full text-red-500 text-sm font-medium"
+                  className="inline-block px-4 py-2 bg-red-600/10 border border-red-600/30 rounded-full text-red-500 text-sm font-medium flex items-center gap-2"
                 >
-                  🚀 Available for Projects
+                  🚀 Available for Projects & Freelance Work
                 </motion.div>
                 
                 <h1 className="text-5xl md:text-7xl font-bold leading-tight">
@@ -503,11 +505,21 @@ function App() {
                 
                 <div className="flex flex-wrap gap-4 pt-4">
                   <Button variant="primary" onClick={() => scrollToSection('contact')}>
-                    Hire Me <FaArrowRight size={18} />
+                    Let's Work Together <FaArrowRight size={18} />
                   </Button>
                   <Button variant="outline" onClick={downloadResume}>
                     <FaDownload size={18} /> Download Resume
                   </Button>
+                </div>
+
+                {/* 📌 NEW: Dual Purpose Badge */}
+                <div className="flex flex-wrap gap-3 pt-2">
+                  <span className="inline-flex items-center gap-1 px-3 py-1 bg-green-500/20 border border-green-500/30 rounded-full text-green-400 text-xs">
+                    <FaBriefcase size={12} /> Open for Freelance
+                  </span>
+                  <span className="inline-flex items-center gap-1 px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-blue-400 text-xs">
+                    <FaUserTie size={12} /> Open for Hire
+                  </span>
                 </div>
 
                 <div className="flex gap-4 pt-4">
@@ -539,7 +551,7 @@ function App() {
                       className="w-full h-full object-cover"
                       onError={(e) => {
                         e.target.style.display = 'none';
-                        e.target.parentElement.innerHTML = '<span class="text-8xl">👨‍💻</span>';
+                        e.target.parentElement.innerHTML = '<span className="text-8xl">👨‍💻</span>';
                       }}
                     />
                   ) : (
@@ -571,6 +583,15 @@ function App() {
                 <p className="text-gray-400 leading-relaxed max-w-2xl mx-auto">
                   {personalInfo.about}
                 </p>
+                {/* 📌 NEW: Dual Purpose Message */}
+                <div className="flex flex-wrap justify-center gap-4 pt-4">
+                  <span className="inline-flex items-center gap-2 px-4 py-2 bg-green-500/10 border border-green-500/20 rounded-full text-green-400 text-sm">
+                    💼 Looking for Freelance Projects
+                  </span>
+                  <span className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-sm">
+                    🤝 Open to Full-Time Roles
+                  </span>
+                </div>
                 <div className="flex flex-wrap justify-center gap-6 pt-6 text-gray-500">
                   <a href={`mailto:${personalInfo.email}`} className="flex items-center gap-2 hover:text-red-500 transition-colors">
                     <FaEnvelope size={18} /> {personalInfo.email}
@@ -741,7 +762,7 @@ function App() {
                         </ul>
                       </div>
                       <div className="md:text-right">
-                        <span className="px-3 py-1 bg-red-600/20 rounded-full text-red-400 text-xs font-medium">Completed</span>
+                        <span className="px-3 py-1 bg-green-500/20 rounded-full text-green-400 text-xs font-medium">Completed</span>
                       </div>
                     </div>
                   </Card>
@@ -770,11 +791,12 @@ function App() {
         </div>
       </Section>
 
-      {/* CONTACT SECTION */}
+      {/* CONTACT SECTION - UPDATED WITH DUAL MESSAGE */}
       <div ref={contactRef}>
         <Section id="contact" className="bg-red-600/10">
           <div className="max-w-2xl mx-auto">
             <SectionTitle>Let's Connect</SectionTitle>
+            <p className="text-center text-gray-400 mb-8">📌 For Freelance Projects • 💼 For Full-Time Roles • 🤝 Any Collaboration</p>
             <Reveal>
               <Card className="bg-black/50 backdrop-blur-sm border-red-600/30">
                 <form className="space-y-4" onSubmit={(e) => {
@@ -795,7 +817,7 @@ function App() {
                   </div>
                   <div>
                     <label className="block text-gray-400 text-sm mb-1">Message</label>
-                    <textarea name="message" rows="5" placeholder="Tell me about your project..." required className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:border-red-500 transition-colors resize-none" />
+                    <textarea name="message" rows="5" placeholder="Tell me about your project, job opportunity, or anything else..." required className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:border-red-500 transition-colors resize-none" />
                   </div>
                   <Button variant="primary" type="submit" className="w-full justify-center">
                     Send Message <FaPaperPlane size={18} />
@@ -820,6 +842,7 @@ function App() {
       <footer className="py-8 border-t border-white/5 text-center text-gray-500 text-sm">
         <p>&copy; {new Date().getFullYear()} {personalInfo.name}. Built with React, Tailwind & Framer Motion.</p>
         <p className="mt-1">Made with <FaHeart className="inline text-red-500" size={14} /> in Gujarat</p>
+        <p className="mt-1 text-xs text-gray-600">Available for Freelance Projects & Full-Time Opportunities</p>
       </footer>
 
     </div>
