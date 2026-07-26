@@ -5,8 +5,7 @@ import {
   FaDownload, FaExternalLinkAlt, FaCode, FaServer, FaDatabase, FaLayerGroup, 
   FaUsers, FaComment, FaClock, FaLightbulb, FaBullseye, FaAward, FaChevronRight, 
   FaBriefcase, FaHeart, FaBolt, FaPaperPlane, FaBars, FaTimes, FaArrowRight,
-  FaCrown, FaStar, FaRocket, FaBuilding, FaIndustry, FaWhatsapp,
-  FaBriefcase, FaUserTie
+  FaCrown, FaStar, FaRocket, FaBuilding, FaIndustry, FaWhatsapp, FaUserTie
 } from 'react-icons/fa';
 
 // ✅ APNI PHOTO IMPORT KAREIN (YAHAN)
