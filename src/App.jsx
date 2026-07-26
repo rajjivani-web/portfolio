@@ -8,6 +8,9 @@ import {
   FaCrown, FaStar, FaRocket, FaBuilding, FaIndustry, FaWhatsapp
 } from 'react-icons/fa';
 
+// ✅ APNI PHOTO IMPORT KAREIN (YAHAN)
+import profilePic from './assets/profile.jpg';
+
 // ============================================================
 // DATA - Aapke Resume Ke Hisaab Se Customized
 // ============================================================
@@ -22,8 +25,7 @@ const personalInfo = {
   github: "https://github.com/rajjivani",
   linkedin: "https://linkedin.com/in/raj-jivani-dev",
   instagram: "https://www.instagram.com/mr_jivani_3/",
-  // ⬇️ YAHAN APNI IMAGE KA PATH DAALEIN ⬇️
- profileImage: "",
+  profileImage: profilePic, // ✅ PHOTO SET
   about: "Results-driven Full-Stack Web Developer with 1+ year of experience and a proven track record of delivering 20+ live web solutions for commercial clients. Specialized in building dynamic admin panels, automated booking systems, and third-party API integrations (WhatsApp, Email, Payment Gateways). Successfully sold 4 high-value commercial projects and built 10+ white-label taxi solutions with custom UI/UX for different brands.",
   experience: [
     {
@@ -325,7 +327,6 @@ function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
-  // Refs for each section
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
   const skillsRef = useRef(null);
@@ -342,101 +343,42 @@ function App() {
     contact: contactRef
   };
 
-  // Smooth scroll function using native scrollIntoView
   const scrollToSection = (sectionId) => {
     const ref = sectionRefs[sectionId];
     if (ref && ref.current) {
-      ref.current.scrollIntoView({ 
-        behavior: 'smooth', 
-        block: 'start'
-      });
+      ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
       setActiveSection(sectionId);
       setIsMenuOpen(false);
     }
   };
 
-  // Download Resume - Matches PDF Structure
   const downloadResume = () => {
     const resumeContent = `
 ╔══════════════════════════════════════════════════════════════════╗
-║                                                              ║
 ║                         RAJ JIVANI                           ║
 ║                   LARAVEL | FULL-STACK DEVELOPER             ║
-║                                                              ║
 ╠══════════════════════════════════════════════════════════════════╣
-║                                                              ║
 ║  CONTACT                                                     ║
-║  ────────────────────────────────────────────────────────────  ║
 ║  📞 +91 8511644844                                          ║
 ║  ✉️ rajjivani100@gmail.com                                  ║
 ║  📍 Sajjanper, Taluka- Tankara, District- Morbi, Gujarat   ║
 ║  🔗 linkedin.com/in/raj-jivani-dev                         ║
-║                                                              ║
-║  SKILLS                                                      ║
-║  ────────────────────────────────────────────────────────────  ║
-║  Laravel | Full-Stack Development | WordPress | PHP         ║
-║  MySQL | JavaScript | Payment Gateways | Bootstrap | CSS    ║
-║                                                              ║
-║  LANGUAGES                                                   ║
-║  ────────────────────────────────────────────────────────────  ║
-║  English (Professional Working Proficiency)                 ║
-║  Hindi (Full Professional Proficiency)                      ║
-║  Gujarati (Native / Bilingual Proficiency)                  ║
-║                                                              ║
-║  REFERENCE                                                   ║
-║  ────────────────────────────────────────────────────────────  ║
-║  Mayur Khokhar                                               ║
-║  Managing Director, Deweb Technology                         ║
-║  Phone: +91 70168 92290                                      ║
-║  Email: mayurkhokhar007@gmail.com                           ║
-║                                                              ║
 ╠══════════════════════════════════════════════════════════════════╣
-║                                                              ║
 ║  PROFILE                                                     ║
-║  ────────────────────────────────────────────────────────────  ║
 ║  ${personalInfo.about}                                       ║
-║                                                              ║
-║  KEY PROJECTS                                                ║
-║  ────────────────────────────────────────────────────────────  ║
-║  • Somnath Cab - Luxury Fleet: Ferrari, Audi, premium       ║
-║    luxury car rental with WhatsApp API integration          ║
-║  • Madhav Sheet Metal Corp: 45+ years precision engineering,║
-║    tractor & automotive parts manufacturer                  ║
-║  • Atlanta Associates: Pharmaceutical contract              ║
-║    manufacturer & merchant exporter                         ║
-║  • Chartered Engineer: Govt approved engineering            ║
-║    consultancy for strategy & revenue growth                ║
-║  • 10+ White-Label Taxi Solutions: Custom UI/UX themes      ║
-║    with core booking logic (Admin → WhatsApp → Database)   ║
-║  • 10+ Portal Projects: Dynamic admin panels, booking       ║
-║    engines, and inventory systems (PHP/Laravel + MySQL)     ║
-║                                                              ║
-║  WORK EXPERIENCE                                             ║
-║  ────────────────────────────────────────────────────────────  ║
+╠══════════════════════════════════════════════════════════════════╣
+║  EXPERIENCE                                                  ║
 ║  Deweb Technology | Web Developer | JUN 2025 - JULY 2026    ║
 ║  • Developed and deployed 20+ full-stack web applications   ║
-║    from scratch                                              ║
 ║  • Built advanced taxi booking engines with AJAX-based      ║
 ║    dynamic pricing                                           ║
 ║  • Integrated WhatsApp Cloud API, SMTP Mail, and UPI        ║
 ║    Payment Gateways                                          ║
 ║  • Successfully sold 4 high-value commercial projects       ║
-║                                                              ║
-║  EDUCATION                                                   ║
-║  ────────────────────────────────────────────────────────────  ║
-║  Bachelor of Computer Applications (BCA)                    ║
-║  Elite Education Institute | Jun 2025 - Present | Grade: B  ║
-║                                                              ║
-║  Higher Secondary Certificate (HSC)                         ║
-║  Elite International School | Grade: B+                     ║
-║                                                              ║
-║  HOBBIES                                                     ║
-║  ────────────────────────────────────────────────────────────  ║
-║  • Exploring new web technologies & frameworks              ║
-║  • Creating digital content & AI-driven imagery             ║
-║  • Building & refining website user interfaces              ║
-║  • Keeping up with modern fashion & style coordination      ║
-║                                                              ║
+╠══════════════════════════════════════════════════════════════════╣
+║  SKILLS                                                      ║
+║  Laravel | PHP | MySQL | JavaScript | WordPress             ║
+║  Bootstrap | Tailwind CSS | Payment Gateways                ║
 ╚══════════════════════════════════════════════════════════════════╝
     `;
 
@@ -451,7 +393,6 @@ function App() {
     URL.revokeObjectURL(url);
   };
 
-  // Track active section on scroll
   useEffect(() => {
     const sections = ['home', 'about', 'skills', 'projects', 'experience', 'contact'];
     const handleScroll = () => {
@@ -478,17 +419,13 @@ function App() {
   return (
     <div className="min-h-screen bg-black text-white font-['Inter',sans-serif] overflow-x-hidden">
       
-      {/* ===== NAVBAR ===== */}
+      {/* NAVBAR */}
       <nav className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-4 flex justify-between items-center">
-          <span 
-            className="text-2xl font-bold text-white cursor-pointer" 
-            onClick={() => scrollToSection('home')}
-          >
+          <span className="text-2xl font-bold text-white cursor-pointer" onClick={() => scrollToSection('home')}>
             RJ<span className="text-red-600">.</span>
           </span>
           
-          {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8 text-sm font-medium">
             {navItems.map((item) => {
               const id = item.toLowerCase();
@@ -497,9 +434,7 @@ function App() {
                   key={item}
                   onClick={() => scrollToSection(id)}
                   className={`transition-colors duration-300 cursor-pointer ${
-                    activeSection === id 
-                      ? 'text-red-500' 
-                      : 'text-gray-400 hover:text-white'
+                    activeSection === id ? 'text-red-500' : 'text-gray-400 hover:text-white'
                   }`}
                 >
                   {item}
@@ -511,13 +446,11 @@ function App() {
             </Button>
           </div>
 
-          {/* Mobile Hamburger */}
           <button className="md:hidden text-white" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? <FaTimes size={28} /> : <FaBars size={28} />}
           </button>
         </div>
 
-        {/* Mobile Menu */}
         {isMenuOpen && (
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -531,9 +464,7 @@ function App() {
                   key={item}
                   onClick={() => scrollToSection(id)}
                   className={`text-left py-2 transition-colors ${
-                    activeSection === id 
-                      ? 'text-red-500' 
-                      : 'text-gray-400 hover:text-white'
+                    activeSection === id ? 'text-red-500' : 'text-gray-400 hover:text-white'
                   }`}
                 >
                   {item}
@@ -547,11 +478,10 @@ function App() {
         )}
       </nav>
 
-      {/* ===== HERO SECTION ===== */}
+      {/* HERO SECTION */}
       <div ref={homeRef}>
         <Section id="home" className="pt-32 md:pt-40 min-h-screen flex items-center">
           <div className="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
-            
             <Reveal>
               <div className="space-y-6">
                 <motion.div
@@ -580,7 +510,6 @@ function App() {
                   </Button>
                 </div>
 
-                {/* Social Icons */}
                 <div className="flex gap-4 pt-4">
                   <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors text-2xl">
                     <FaGithub />
@@ -598,7 +527,7 @@ function App() {
               </div>
             </Reveal>
 
-            {/* Right Side - Profile Image */}
+            {/* Profile Image */}
             <Reveal delay={0.3}>
               <div className="relative flex justify-center">
                 <div className="absolute inset-0 bg-red-600/20 rounded-full blur-3xl"></div>
@@ -629,7 +558,7 @@ function App() {
         </Section>
       </div>
 
-      {/* ===== ABOUT SECTION ===== */}
+      {/* ABOUT SECTION */}
       <div ref={aboutRef}>
         <Section id="about" className="bg-white/5">
           <div className="max-w-4xl mx-auto text-center">
@@ -657,7 +586,7 @@ function App() {
         </Section>
       </div>
 
-      {/* ===== SKILLS SECTION ===== */}
+      {/* SKILLS SECTION */}
       <div ref={skillsRef}>
         <Section id="skills">
           <div className="max-w-7xl mx-auto">
@@ -688,14 +617,14 @@ function App() {
         </Section>
       </div>
 
-      {/* ===== PROJECTS SECTION ===== */}
+      {/* PROJECTS SECTION */}
       <div ref={projectsRef}>
         <Section id="projects" className="bg-white/5">
           <div className="max-w-7xl mx-auto">
             <SectionTitle>My Projects</SectionTitle>
             <p className="text-center text-gray-400 mb-8">24+ Projects Delivered • 4 Commercial Sales • 20+ Taxi Solutions</p>
             
-            {/* ===== COMMERCIAL PROJECTS (Sold) ===== */}
+            {/* Commercial Projects */}
             <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
               <FaRocket className="text-green-400" /> Commercial Projects <span className="text-sm text-green-400 font-normal">(Sold & Live)</span>
             </h3>
@@ -714,17 +643,20 @@ function App() {
                         </span>
                       ))}
                     </div>
-                    {/* Contact Buttons for Commercial Projects */}
-                    <div className="flex flex-wrap gap-2 mb-3">
-                      <a 
-                        href={project.liveLink} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="bg-green-600 hover:bg-green-700 text-white text-xs font-medium px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1"
-                      >
+                    <div className="flex flex-wrap gap-2">
+                      <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="bg-green-600 hover:bg-green-700 text-white text-xs font-medium px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1">
                         🌐 Visit Site
                       </a>
-
+                      {project.phone && (
+                        <a href={`tel:${project.phone}`} className="bg-blue-600 hover:bg-blue-700 text-white text-xs font-medium px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1">
+                          <FaPhone size={12} /> Call
+                        </a>
+                      )}
+                      {project.whatsapp && (
+                        <a href={project.whatsapp} target="_blank" rel="noopener noreferrer" className="bg-green-500 hover:bg-green-600 text-white text-xs font-medium px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1">
+                          <FaWhatsapp size={12} /> WhatsApp
+                        </a>
+                      )}
                     </div>
                   </Card>
                 </Reveal>
@@ -749,12 +681,7 @@ function App() {
                         </span>
                       ))}
                     </div>
-                    <a 
-                      href={project.liveLink} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="text-red-500 hover:text-red-400 text-sm font-medium flex items-center gap-1"
-                    >
+                    <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="text-red-500 hover:text-red-400 text-sm font-medium flex items-center gap-1">
                       View Project <FaExternalLinkAlt size={14} />
                     </a>
                   </Card>
@@ -780,12 +707,7 @@ function App() {
                         </span>
                       ))}
                     </div>
-                    <a 
-                      href={project.liveLink} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="text-red-500 hover:text-red-400 text-sm font-medium flex items-center gap-1"
-                    >
+                    <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="text-red-500 hover:text-red-400 text-sm font-medium flex items-center gap-1">
                       View Project <FaExternalLinkAlt size={14} />
                     </a>
                   </Card>
@@ -796,12 +718,11 @@ function App() {
         </Section>
       </div>
 
-      {/* ===== EXPERIENCE SECTION ===== */}
+      {/* EXPERIENCE SECTION */}
       <div ref={experienceRef}>
         <Section id="experience">
           <div className="max-w-4xl mx-auto">
             <SectionTitle>Experience</SectionTitle>
-            
             <div className="space-y-6">
               {personalInfo.experience.map((exp, idx) => (
                 <Reveal key={idx} delay={idx * 0.1}>
@@ -831,7 +752,7 @@ function App() {
         </Section>
       </div>
 
-      {/* ===== SOFT SKILLS ===== */}
+      {/* SOFT SKILLS */}
       <Section id="soft-skills" className="bg-white/5">
         <div className="max-w-7xl mx-auto">
           <SectionTitle>Soft Skills</SectionTitle>
@@ -849,7 +770,7 @@ function App() {
         </div>
       </Section>
 
-      {/* ===== CONTACT SECTION ===== */}
+      {/* CONTACT SECTION */}
       <div ref={contactRef}>
         <Section id="contact" className="bg-red-600/10">
           <div className="max-w-2xl mx-auto">
@@ -866,33 +787,15 @@ function App() {
                 }}>
                   <div>
                     <label className="block text-gray-400 text-sm mb-1">Your Name</label>
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder="John Doe"
-                      required
-                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:border-red-500 transition-colors"
-                    />
+                    <input type="text" name="name" placeholder="John Doe" required className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:border-red-500 transition-colors" />
                   </div>
                   <div>
                     <label className="block text-gray-400 text-sm mb-1">Your Email</label>
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="john@example.com"
-                      required
-                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:border-red-500 transition-colors"
-                    />
+                    <input type="email" name="email" placeholder="john@example.com" required className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:border-red-500 transition-colors" />
                   </div>
                   <div>
                     <label className="block text-gray-400 text-sm mb-1">Message</label>
-                    <textarea
-                      name="message"
-                      rows="5"
-                      placeholder="Tell me about your project..."
-                      required
-                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:border-red-500 transition-colors resize-none"
-                    />
+                    <textarea name="message" rows="5" placeholder="Tell me about your project..." required className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:border-red-500 transition-colors resize-none" />
                   </div>
                   <Button variant="primary" type="submit" className="w-full justify-center">
                     Send Message <FaPaperPlane size={18} />
@@ -913,7 +816,7 @@ function App() {
         </Section>
       </div>
 
-      {/* ===== FOOTER ===== */}
+      {/* FOOTER */}
       <footer className="py-8 border-t border-white/5 text-center text-gray-500 text-sm">
         <p>&copy; {new Date().getFullYear()} {personalInfo.name}. Built with React, Tailwind & Framer Motion.</p>
         <p className="mt-1">Made with <FaHeart className="inline text-red-500" size={14} /> in Gujarat</p>
