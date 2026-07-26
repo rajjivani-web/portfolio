@@ -74,6 +74,22 @@ const personalInfo = {
       category: "Commercial", 
       liveLink: "https://palegoldenrod-turtle-665129.hostingersite.com/"
     },
+    { 
+      title: "SmartLife Hub", 
+      description: "A polished productivity and task management website with modern UI, stat cards, and clean note workflow experience.", 
+      tech: ["React", "Tailwind CSS", "Vite"], 
+      image: "✨", 
+      category: "Commercial", 
+      liveLink: "https://rajjivani-web.github.io/smartlife-hub/"
+    },
+    { 
+      title: "Raj Jivani Portfolio", 
+      description: "Personal portfolio website showcasing projects, experience, skills, and contact details with a premium dark theme.", 
+      tech: ["React", "Tailwind CSS", "Vite"], 
+      image: "🧑‍💻", 
+      category: "Commercial", 
+      liveLink: "https://rajjivani-web.github.io/portfolio/"
+    },
 
     // ===== 10 PORTAL / PREMIUM TAXI WEBSITES (taxi1 to taxi10) =====
     { 
