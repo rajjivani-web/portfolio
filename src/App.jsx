@@ -49,6 +49,8 @@ const personalInfo = {
       image: "🚗", 
       category: "Commercial", 
       liveLink: "https://somnathcab.com",
+      phone: "+91 7984588357",
+      whatsapp: "https://wa.me/917984588357"
     },
     { 
       title: "Madhav Sheet Metal Corp", 
@@ -57,6 +59,8 @@ const personalInfo = {
       image: "🏭", 
       category: "Commercial", 
       liveLink: "https://madhavsmcorp.com",
+      phone: "+91 94294 26704",
+      whatsapp: "https://wa.me/919429426704"
     },
     { 
       title: "Atlanta Associates", 
@@ -65,6 +69,8 @@ const personalInfo = {
       image: "💊", 
       category: "Commercial", 
       liveLink: "https://atlantapharmic.com",
+      phone: "",
+      whatsapp: ""
     },
     { 
       title: "Chartered Engineer Consultancy", 
@@ -73,6 +79,8 @@ const personalInfo = {
       image: "⚙️", 
       category: "Commercial", 
       liveLink: "https://palegoldenrod-turtle-665129.hostingersite.com/",
+      phone: "",
+      whatsapp: ""
     },
 
     // ===== 10 PORTAL / PREMIUM TAXI WEBSITES (taxi1 to taxi10) =====
