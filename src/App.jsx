@@ -659,16 +659,6 @@ function App() {
                       <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="bg-green-600 hover:bg-green-700 text-white text-xs font-medium px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1">
                         🌐 Visit Site
                       </a>
-                      {project.phone && (
-                        <a href={`tel:${project.phone}`} className="bg-blue-600 hover:bg-blue-700 text-white text-xs font-medium px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1">
-                          <FaPhone size={12} /> Call
-                        </a>
-                      )}
-                      {project.whatsapp && (
-                        <a href={project.whatsapp} target="_blank" rel="noopener noreferrer" className="bg-green-500 hover:bg-green-600 text-white text-xs font-medium px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1">
-                          <FaWhatsapp size={12} /> WhatsApp
-                        </a>
-                      )}
                     </div>
                   </Card>
                 </Reveal>
