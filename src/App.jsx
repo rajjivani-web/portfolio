@@ -48,9 +48,7 @@ const personalInfo = {
       tech: ["Laravel", "PHP", "MySQL", "WhatsApp API"], 
       image: "🚗", 
       category: "Commercial", 
-      liveLink: "https://somnathcab.com",
-      phone: "+91 7984588357",
-      whatsapp: "https://wa.me/917984588357"
+      liveLink: "https://somnathcab.com"
     },
     { 
       title: "Madhav Sheet Metal Corp", 
@@ -58,9 +56,7 @@ const personalInfo = {
       tech: ["Laravel", "PHP", "MySQL", "Bootstrap"], 
       image: "🏭", 
       category: "Commercial", 
-      liveLink: "https://madhavsmcorp.com",
-      phone: "+91 94294 26704",
-      whatsapp: "https://wa.me/919429426704"
+      liveLink: "https://madhavsmcorp.com"
     },
     { 
       title: "Atlanta Associates", 
@@ -68,9 +64,7 @@ const personalInfo = {
       tech: ["Laravel", "PHP", "MySQL", "Bootstrap"], 
       image: "💊", 
       category: "Commercial", 
-      liveLink: "https://atlantapharmic.com",
-      phone: "",
-      whatsapp: ""
+      liveLink: "https://atlantapharmic.com"
     },
     { 
       title: "Chartered Engineer Consultancy", 
@@ -78,9 +72,7 @@ const personalInfo = {
       tech: ["Laravel", "PHP", "MySQL", "Bootstrap"], 
       image: "⚙️", 
       category: "Commercial", 
-      liveLink: "https://palegoldenrod-turtle-665129.hostingersite.com/",
-      phone: "",
-      whatsapp: ""
+      liveLink: "https://palegoldenrod-turtle-665129.hostingersite.com/"
     },
 
     // ===== 10 PORTAL / PREMIUM TAXI WEBSITES (taxi1 to taxi10) =====
@@ -479,7 +471,7 @@ function App() {
         )}
       </nav>
 
-      {/* HERO SECTION - UPDATED FOR CLIENTS + RECRUITERS */}
+      {/* HERO SECTION */}
       <div ref={homeRef}>
         <Section id="home" className="pt-32 md:pt-40 min-h-screen flex items-center">
           <div className="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
@@ -511,7 +503,6 @@ function App() {
                   </Button>
                 </div>
 
-                {/* 📌 NEW: Dual Purpose Badge */}
                 <div className="flex flex-wrap gap-3 pt-2">
                   <span className="inline-flex items-center gap-1 px-3 py-1 bg-green-500/20 border border-green-500/30 rounded-full text-green-400 text-xs">
                     <FaBriefcase size={12} /> Open for Freelance
@@ -538,7 +529,6 @@ function App() {
               </div>
             </Reveal>
 
-            {/* Profile Image */}
             <Reveal delay={0.3}>
               <div className="relative flex justify-center">
                 <div className="absolute inset-0 bg-red-600/20 rounded-full blur-3xl"></div>
@@ -582,7 +572,6 @@ function App() {
                 <p className="text-gray-400 leading-relaxed max-w-2xl mx-auto">
                   {personalInfo.about}
                 </p>
-                {/* 📌 NEW: Dual Purpose Message */}
                 <div className="flex flex-wrap justify-center gap-4 pt-4">
                   <span className="inline-flex items-center gap-2 px-4 py-2 bg-green-500/10 border border-green-500/20 rounded-full text-green-400 text-sm">
                     💼 Looking for Freelance Projects
@@ -780,7 +769,7 @@ function App() {
         </div>
       </Section>
 
-      {/* CONTACT SECTION - UPDATED WITH DUAL MESSAGE */}
+      {/* CONTACT SECTION */}
       <div ref={contactRef}>
         <Section id="contact" className="bg-red-600/10">
           <div className="max-w-2xl mx-auto">
