@@ -8,8 +8,8 @@ import {
   FaCrown, FaStar, FaRocket, FaBuilding, FaIndustry, FaWhatsapp, FaUserTie
 } from 'react-icons/fa';
 
-// ✅ YEH LINE ADD KAREIN
-import profilePic from './assets/profile.jpg';
+// ✅ IMAGE IMPORT - SRC/ASSETS WALI
+import profilePic from './assets/newphoto.jpg';
 
 // ============================================================
 // DATA - Aapke Resume Ke Hisaab Se Customized
@@ -25,7 +25,7 @@ const personalInfo = {
   github: "https://github.com/rajjivani",
   linkedin: "https://linkedin.com/in/raj-jivani-dev",
   instagram: "https://www.instagram.com/mr_jivani_3/",
-  profileImage: profilePic, // ✅ YAHAN CHANGE KAREIN
+  profileImage: profilePic,
   about: "Results-driven Full-Stack Web Developer with 1+ years of experience and a proven track record of delivering 20+ live web solutions for commercial clients. Specialized in building dynamic admin panels, automated booking systems, and third-party API integrations (WhatsApp, Email, Payment Gateways). Successfully sold 4 high-value commercial projects and built 10+ white-label taxi solutions with custom UI/UX for different brands.",
   experience: [
     {
