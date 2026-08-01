@@ -8,9 +8,6 @@ import {
   FaCrown, FaStar, FaRocket, FaBuilding, FaIndustry, FaWhatsapp, FaUserTie
 } from 'react-icons/fa';
 
-// ✅ APNI PHOTO IMPORT KAREIN (YAHAN)
-import profilePic from './assets/profile.jpg';
-
 // ============================================================
 // DATA - Aapke Resume Ke Hisaab Se Customized
 // ============================================================
@@ -25,7 +22,7 @@ const personalInfo = {
   github: "https://github.com/rajjivani",
   linkedin: "https://linkedin.com/in/raj-jivani-dev",
   instagram: "https://www.instagram.com/mr_jivani_3/",
-  profileImage: profilePic,
+  profileImage: "", // ✅ Empty - Fallback emoji dikhega
   about: "Results-driven Full-Stack Web Developer with 1+ years of experience and a proven track record of delivering 20+ live web solutions for commercial clients. Specialized in building dynamic admin panels, automated booking systems, and third-party API integrations (WhatsApp, Email, Payment Gateways). Successfully sold 4 high-value commercial projects and built 10+ white-label taxi solutions with custom UI/UX for different brands.",
   experience: [
     {
@@ -240,7 +237,7 @@ const personalInfo = {
     }
   ],
   skills: {
-    programming: ["JavaScript", "PHP", "CSS", "HTML"],
+    programming: ["JavaScript", "PHP", "CSS", "HTML", "Web Designer", "Web Developer", "phpmyadmin", "UI/UX Designer", "Basic React.js", "Basic Node.js"],
     fullStack: ["Laravel", "WordPress", "Bootstrap", "Tailwind CSS"],
     backend: ["PHP", "MySQL", "API Integration", "Payment Gateways"],
     concepts: ["Full-Stack Development", "White-Label Solutions", "API Integration", "UI/UX Design"]
@@ -348,30 +345,91 @@ function App() {
   const downloadResume = () => {
     const resumeContent = `
 ╔══════════════════════════════════════════════════════════════════╗
+║                                                              ║
 ║                         RAJ JIVANI                           ║
 ║                   LARAVEL | FULL-STACK DEVELOPER             ║
+║                                                              ║
 ╠══════════════════════════════════════════════════════════════════╣
+║                                                              ║
 ║  CONTACT                                                     ║
+║  ────────────────────────────────────────────────────────────  ║
 ║  📞 +91 8511644844                                          ║
 ║  ✉️ rajjivani100@gmail.com                                  ║
 ║  📍 Sajjanper, Taluka- Tankara, District- Morbi, Gujarat   ║
 ║  🔗 linkedin.com/in/raj-jivani-dev                         ║
+║  🌐 https://rajjivani-web.github.io/portfolio/              ║
+║                                                              ║
+║  SKILLS                                                      ║
+║  ────────────────────────────────────────────────────────────  ║
+║  Laravel | Full-Stack Development | WordPress | PHP         ║
+║  Web Developer | Web Designer | phpmyadmin                  ║
+║  MySQL | JavaScript | Payment Gateways | Bootstrap | CSS    ║
+║  UI/UX Designer | Basic React.js | Basic Node.js            ║
+║                                                              ║
+║  LANGUAGES                                                   ║
+║  ────────────────────────────────────────────────────────────  ║
+║  English (Professional Working Proficiency)                 ║
+║  Hindi (Full Professional Proficiency)                      ║
+║  Gujarati (Native / Bilingual Proficiency)                  ║
+║                                                              ║
+║  REFERENCE                                                   ║
+║  ────────────────────────────────────────────────────────────  ║
+║  Mayur Khokhar                                               ║
+║  Managing Director, Deweb Technology                         ║
+║  Phone: +91 70168 92290                                      ║
+║  Email: mayurkhokhar007@gmail.com                           ║
+║                                                              ║
 ╠══════════════════════════════════════════════════════════════════╣
+║                                                              ║
 ║  PROFILE                                                     ║
-║  ${personalInfo.about}                                       ║
-╠══════════════════════════════════════════════════════════════════╣
-║  EXPERIENCE                                                  ║
+║  ────────────────────────────────────────────────────────────  ║
+║  Results-driven Full-Stack Web Developer with 1+ years of   ║
+║  experience and a proven track record of delivering 20+     ║
+║  live web solutions for commercial clients. Specialized in  ║
+║  building dynamic admin panels, automated booking systems,  ║
+║  and third-party API integrations (WhatsApp, Email,         ║
+║  Payment Gateways). Successfully sold 4 high-value          ║
+║  commercial projects and built 10+ white-label taxi         ║
+║  solutions with custom UI/UX for different brands.          ║
+║                                                              ║
+║  KEY PROJECTS                                                ║
+║  ────────────────────────────────────────────────────────────  ║
+║  • VayuRide (Taxi Platform): Auto-KM/price, UPI payment,   ║
+║    admin approval, PDF invoices. Built for premium fleets.  ║
+║  • 4 Commercial Sales: Somnath Cab (driver tracking),       ║
+║    Atlanta Pharmac (inventory), Madhavsmcorp (corporate),   ║
+║    Chartered Engineer (consultancy)                         ║
+║  • 10+ White-Label Taxi Solutions: Custom UI/UX themes      ║
+║    with core booking logic (Admin → WhatsApp → Database)   ║
+║  • 10+ Portal Projects: Dynamic admin panels, booking       ║
+║    engines, and inventory systems (PHP/Laravel + MySQL)     ║
+║                                                              ║
+║  WORK EXPERIENCE                                             ║
+║  ────────────────────────────────────────────────────────────  ║
 ║  Deweb Technology | Web Developer | JUN 2025 - JULY 2026    ║
 ║  • Developed and deployed 20+ full-stack web applications   ║
+║    from scratch                                              ║
 ║  • Built advanced taxi booking engines with AJAX-based      ║
 ║    dynamic pricing                                           ║
 ║  • Integrated WhatsApp Cloud API, SMTP Mail, and UPI        ║
 ║    Payment Gateways                                          ║
 ║  • Successfully sold 4 high-value commercial projects       ║
-╠══════════════════════════════════════════════════════════════════╣
-║  SKILLS                                                      ║
-║  Laravel | PHP | MySQL | JavaScript | WordPress             ║
-║  Bootstrap | Tailwind CSS | Payment Gateways                ║
+║                                                              ║
+║  EDUCATION                                                   ║
+║  ────────────────────────────────────────────────────────────  ║
+║  Bachelor of Computer Applications (BCA)                    ║
+║  Elite Education Institute | Jun 2025 - Present | Grade: B  ║
+║                                                              ║
+║  Higher Secondary Certificate (HSC)                         ║
+║  Elite International School | Grade: B+                     ║
+║                                                              ║
+║  HOBBIES                                                     ║
+║  ────────────────────────────────────────────────────────────  ║
+║  • Exploring new web technologies & frameworks              ║
+║  • Creating digital content & AI-driven imagery             ║
+║  • Building & refining website user interfaces              ║
+║  • Keeping up with modern fashion & style coordination      ║
+║                                                              ║
 ╚══════════════════════════════════════════════════════════════════╝
     `;
 
