@@ -26,12 +26,12 @@ const personalInfo = {
   linkedin: "https://linkedin.com/in/raj-jivani-dev",
   instagram: "https://www.instagram.com/mr_jivani_3/",
   profileImage: profilePic,
-  about: "Results-driven Full-Stack Web Developer with 3+ years of experience and a proven track record of delivering 20+ live web solutions for commercial clients. Specialized in building dynamic admin panels, automated booking systems, and third-party API integrations (WhatsApp, Email, Payment Gateways). Successfully sold 4 high-value commercial projects and built 10+ white-label taxi solutions with custom UI/UX for different brands.",
+  about: "Results-driven Full-Stack Web Developer with 1+ years of experience and a proven track record of delivering 20+ live web solutions for commercial clients. Specialized in building dynamic admin panels, automated booking systems, and third-party API integrations (WhatsApp, Email, Payment Gateways). Successfully sold 4 high-value commercial projects and built 10+ white-label taxi solutions with custom UI/UX for different brands.",
   experience: [
     {
       company: "Deweb Technology",
       role: "Web Developer",
-      period: "APR 2023 - JULY 2026",
+      period: "JUN 2025 - JULY 2026",
       achievements: [
         "Developed and deployed 20+ full-stack web applications from scratch",
         "Built advanced taxi booking engines with AJAX-based dynamic pricing",
@@ -361,7 +361,7 @@ function App() {
 ║  ${personalInfo.about}                                       ║
 ╠══════════════════════════════════════════════════════════════════╣
 ║  EXPERIENCE                                                  ║
-║  Deweb Technology | Web Developer | APR 2023 - JULY 2026    ║
+║  Deweb Technology | Web Developer | JUN 2025 - JULY 2026    ║
 ║  • Developed and deployed 20+ full-stack web applications   ║
 ║  • Built advanced taxi booking engines with AJAX-based      ║
 ║    dynamic pricing                                           ║
