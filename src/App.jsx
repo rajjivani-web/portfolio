@@ -5,7 +5,8 @@ import {
   FaDownload, FaExternalLinkAlt, FaCode, FaServer, FaDatabase, FaLayerGroup, 
   FaUsers, FaComment, FaClock, FaLightbulb, FaBullseye, FaAward, FaChevronRight, 
   FaBriefcase, FaHeart, FaBolt, FaPaperPlane, FaBars, FaTimes, FaArrowRight,
-  FaCrown, FaStar, FaRocket, FaBuilding, FaIndustry, FaWhatsapp, FaUserTie
+  FaCrown, FaStar, FaRocket, FaBuilding, FaIndustry, FaWhatsapp, FaUserTie,
+  FaFire, FaGlobe
 } from 'react-icons/fa';
 
 // ✅ IMAGE IMPORT - SRC/ASSETS WALI
@@ -41,54 +42,49 @@ const personalInfo = {
     }
   ],
   projects: [
+    // ===== PERSONAL / FEATURED PROJECT (SMARTLIFE HUB) =====
+    {
+      title: "SmartLife Hub",
+      description: "A polished productivity and task management website with modern UI, stat cards, and clean note workflow experience. Fully responsive with dark/light theme support.",
+      tech: ["React", "Tailwind CSS", "Vite", "Context API"],
+      image: "✨",
+      category: "Personal",
+      liveLink: "https://rajjivani-web.github.io/smartlife-hub/",
+      featured: true
+    },
+
     // ===== 4 COMMERCIAL / SOLD PROJECTS (WITH LINKS) =====
-    { 
-      title: "Somnath Cab - Luxury Fleet", 
-      description: "Premium luxury car rental & taxi service featuring Ferrari 812, Ferrari 488, Audi Etron, Audi Q5. Real-time booking, driver tracking, and instant WhatsApp integration for fleet management.", 
-      tech: ["Laravel", "PHP", "MySQL", "WhatsApp API"], 
-      image: "🚗", 
-      category: "Commercial", 
+    {
+      title: "Somnath Cab - Luxury Fleet",
+      description: "Premium luxury car rental & taxi service featuring Ferrari 812, Ferrari 488, Audi Etron, Audi Q5. Real-time booking, driver tracking, and instant WhatsApp integration for fleet management.",
+      tech: ["Laravel", "PHP", "MySQL", "WhatsApp API"],
+      image: "🚗",
+      category: "Commercial",
       liveLink: "https://somnathcab.com"
     },
-    { 
-      title: "Madhav Sheet Metal Corp", 
-      description: "45+ years of precision engineering excellence. Manufacturer of tractor, textile, automotive & stamping parts with 100% quality satisfaction and ISO-certified processes.", 
-      tech: ["Laravel", "PHP", "MySQL", "Bootstrap"], 
-      image: "🏭", 
-      category: "Commercial", 
+    {
+      title: "Madhav Sheet Metal Corp",
+      description: "45+ years of precision engineering excellence. Manufacturer of tractor, textile, automotive & stamping parts with 100% quality satisfaction and ISO-certified processes.",
+      tech: ["Laravel", "PHP", "MySQL", "Bootstrap"],
+      image: "🏭",
+      category: "Commercial",
       liveLink: "https://madhavsmcorp.com"
     },
-    { 
-      title: "Atlanta Associates", 
-      description: "Contract manufacturer & merchant exporter in pharmaceutical industry. Turnkey projects, product distribution, and quality wellness solutions with global reach.", 
-      tech: ["Laravel", "PHP", "MySQL", "Bootstrap"], 
-      image: "💊", 
-      category: "Commercial", 
+    {
+      title: "Atlanta Associates",
+      description: "Contract manufacturer & merchant exporter in pharmaceutical industry. Turnkey projects, product distribution, and quality wellness solutions with global reach.",
+      tech: ["Laravel", "PHP", "MySQL", "Bootstrap"],
+      image: "💊",
+      category: "Commercial",
       liveLink: "https://atlantapharmic.com"
     },
-    { 
-      title: "Chartered Engineer Consultancy", 
-      description: "Government approved chartered engineer offering strategy execution, revenue growth consulting, and professional engineering services for industrial projects.", 
-      tech: ["Laravel", "PHP", "MySQL", "Bootstrap"], 
-      image: "⚙️", 
-      category: "Commercial", 
+    {
+      title: "Chartered Engineer Consultancy",
+      description: "Government approved chartered engineer offering strategy execution, revenue growth consulting, and professional engineering services for industrial projects.",
+      tech: ["Laravel", "PHP", "MySQL", "Bootstrap"],
+      image: "⚙️",
+      category: "Commercial",
       liveLink: "https://palegoldenrod-turtle-665129.hostingersite.com/"
-    },
-    { 
-      title: "SmartLife Hub", 
-      description: "A polished productivity and task management website with modern UI, stat cards, and clean note workflow experience.", 
-      tech: ["React", "Tailwind CSS", "Vite"], 
-      image: "✨", 
-      category: "Commercial", 
-      liveLink: "https://rajjivani-web.github.io/smartlife-hub/"
-    },
-    { 
-      title: "Raj Jivani Portfolio", 
-      description: "Personal portfolio website showcasing projects, experience, skills, and contact details with a premium dark theme.", 
-      tech: ["React", "Tailwind CSS", "Vite"], 
-      image: "🧑‍💻", 
-      category: "Commercial", 
-      liveLink: "https://rajjivani-web.github.io/portfolio/"
     },
 
     // ===== 10 PORTAL / PREMIUM TAXI WEBSITES (taxi1 to taxi10) =====
@@ -413,8 +409,7 @@ function App() {
 ║                                                              ║
 ║  KEY PROJECTS                                                ║
 ║  ────────────────────────────────────────────────────────────  ║
-║  • VayuRide (Taxi Platform): Auto-KM/price, UPI payment,   ║
-║    admin approval, PDF invoices. Built for premium fleets.  ║
+║  • SmartLife Hub (Personal) - React, Tailwind, Vite         ║
 ║  • 4 Commercial Sales: Somnath Cab (driver tracking),       ║
 ║    Atlanta Pharmac (inventory), Madhavsmcorp (corporate),   ║
 ║    Chartered Engineer (consultancy)                         ║
@@ -485,6 +480,45 @@ function App() {
   }, []);
 
   const navItems = ['Home', 'About', 'Skills', 'Projects', 'Experience', 'Contact'];
+
+  // Helper to render project cards
+  const renderProjects = (projects, categoryLabel, color = "red", icon = null) => {
+    if (projects.length === 0) return null;
+    return (
+      <>
+        <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+          {icon && icon}
+          {categoryLabel}
+        </h3>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          {projects.map((project, idx) => (
+            <Reveal key={idx} delay={idx * 0.05}>
+              <Card className={`h-full hover:-translate-y-2 group ${project.featured ? 'border-blue-500/60 bg-blue-500/10' : `border-${color}-500/20 bg-${color}-500/5`}`}>
+                <div className="text-5xl mb-4">{project.image}</div>
+                {project.featured && (
+                  <div className="inline-block px-2 py-1 bg-blue-500/30 rounded-full text-xs text-blue-300 mb-2 flex items-center gap-1">
+                    <FaFire className="text-yellow-400" size={12} /> Featured
+                  </div>
+                )}
+                <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
+                <p className="text-gray-400 text-sm mb-4">{project.description}</p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tech.slice(0, 3).map((tech) => (
+                    <span key={tech} className={`px-2 py-1 ${project.featured ? 'bg-blue-500/20 text-blue-300' : `bg-${color}-500/20 text-${color}-400`} rounded-full text-xs`}>
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="text-red-500 hover:text-red-400 text-sm font-medium flex items-center gap-1">
+                  View Project <FaExternalLinkAlt size={14} />
+                </a>
+              </Card>
+            </Reveal>
+          ))}
+        </div>
+      </>
+    );
+  };
 
   return (
     <div className="min-h-screen bg-black text-white font-['Inter',sans-serif] overflow-x-hidden">
@@ -708,88 +742,35 @@ function App() {
         <Section id="projects" className="bg-white/5">
           <div className="max-w-7xl mx-auto">
             <SectionTitle>My Projects</SectionTitle>
-            <p className="text-center text-gray-400 mb-8">24+ Projects Delivered • 4 Commercial Sales • 20+ Taxi Solutions</p>
-            
-            {/* Commercial Projects */}
-            <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-              <FaRocket className="text-green-400" /> Commercial Projects <span className="text-sm text-green-400 font-normal">(Sold & Live)</span>
-            </h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-              {personalInfo.projects.filter(p => p.category === "Commercial").map((project, idx) => (
-                <Reveal key={idx} delay={idx * 0.05}>
-                  <Card className="h-full hover:-translate-y-2 group border-green-500/40 bg-green-500/5">
-                    <div className="text-5xl mb-4">{project.image}</div>
-                    <div className="inline-block px-2 py-1 bg-green-500/20 rounded-full text-xs text-green-400 mb-2">🚀 Live</div>
-                    <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
-                    <p className="text-gray-400 text-sm mb-4">{project.description}</p>
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {project.tech.slice(0, 3).map((tech) => (
-                        <span key={tech} className="px-2 py-1 bg-green-500/20 rounded-full text-xs text-green-400">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                    <div className="flex flex-wrap gap-2">
-                      <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="bg-green-600 hover:bg-green-700 text-white text-xs font-medium px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1">
-                        🌐 Visit Site
-                      </a>
-                    </div>
-                  </Card>
-                </Reveal>
-              ))}
-            </div>
+            <p className="text-center text-gray-400 mb-8">25+ Projects Delivered • 4 Commercial Sales • 20+ Taxi Solutions • 1 Featured Personal Project</p>
 
-            {/* Premium Projects */}
-            <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-              <FaCrown className="text-yellow-500" /> Premium (10)
-            </h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-              {personalInfo.projects.filter(p => p.category === "Premium").map((project, idx) => (
-                <Reveal key={idx} delay={idx * 0.05}>
-                  <Card className="h-full hover:-translate-y-2 group border-yellow-500/20">
-                    <div className="text-5xl mb-4">{project.image}</div>
-                    <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
-                    <p className="text-gray-400 text-sm mb-4">{project.description}</p>
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {project.tech.slice(0, 3).map((tech) => (
-                        <span key={tech} className="px-2 py-1 bg-yellow-500/20 rounded-full text-xs text-yellow-400">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                    <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="text-red-500 hover:text-red-400 text-sm font-medium flex items-center gap-1">
-                      View Project <FaExternalLinkAlt size={14} />
-                    </a>
-                  </Card>
-                </Reveal>
-              ))}
-            </div>
+            {renderProjects(
+              personalInfo.projects.filter(p => p.category === "Personal"),
+              "🌟 Personal Projects",
+              "blue",
+              <FaGlobe className="text-blue-400" />
+            )}
 
-            {/* Basic Projects */}
-            <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-              <FaStar className="text-blue-400" /> Basic (10)
-            </h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {personalInfo.projects.filter(p => p.category === "Basic").map((project, idx) => (
-                <Reveal key={idx} delay={idx * 0.05}>
-                  <Card className="h-full hover:-translate-y-2 group border-blue-500/20">
-                    <div className="text-5xl mb-4">{project.image}</div>
-                    <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
-                    <p className="text-gray-400 text-sm mb-4">{project.description}</p>
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {project.tech.slice(0, 3).map((tech) => (
-                        <span key={tech} className="px-2 py-1 bg-blue-500/20 rounded-full text-xs text-blue-400">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                    <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="text-red-500 hover:text-red-400 text-sm font-medium flex items-center gap-1">
-                      View Project <FaExternalLinkAlt size={14} />
-                    </a>
-                  </Card>
-                </Reveal>
-              ))}
-            </div>
+            {renderProjects(
+              personalInfo.projects.filter(p => p.category === "Commercial"),
+              "🚀 Commercial Projects (Sold & Live)",
+              "green",
+              <FaRocket className="text-green-400" />
+            )}
+
+            {renderProjects(
+              personalInfo.projects.filter(p => p.category === "Premium"),
+              "👑 Premium (10)",
+              "yellow",
+              <FaCrown className="text-yellow-500" />
+            )}
+
+            {renderProjects(
+              personalInfo.projects.filter(p => p.category === "Basic"),
+              "⭐ Basic (10)",
+              "blue",
+              <FaStar className="text-blue-400" />
+            )}
           </div>
         </Section>
       </div>
